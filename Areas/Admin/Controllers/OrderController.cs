@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using BaiTapLonMVC.Models;
 using Model;
+using Shop.Application.Models;
 
-namespace BaiTapLonMVC.Areas.Admin.Controllers
+namespace Shop.Application.Areas.Admin.Controllers
 {
     public class OrderController : Controller
     {

@@ -1,4 +1,4 @@
-﻿namespace BaiTapLonMVC.Models
+﻿namespace Shop.Application.Models
 {
     public class Cart
     {
@@ -19,7 +19,7 @@
 
         public Cart()
         {
-            
+
         }
 
         public int IdProduct

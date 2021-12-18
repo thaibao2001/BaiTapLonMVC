@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31717.71
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaiTapLonMVC", "BaiTapLonMVC.csproj", "{EAA25CEB-D905-4B68-811A-F12A3D073F8A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Application", "Shop.Application.csproj", "{EAA25CEB-D905-4B68-811A-F12A3D073F8A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "..\Model\Model.csproj", "{7A8603AC-7515-4CA4-800D-A42894342FD9}"
 EndProject

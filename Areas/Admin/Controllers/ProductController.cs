@@ -3,7 +3,7 @@ using System.Linq;
 using System.Web.Mvc;
 using Model;
 
-namespace BaiTapLonMVC.Areas.Admin.Controllers
+namespace Shop.Application.Areas.Admin.Controllers
 {
     public class ProductController : Controller
     {

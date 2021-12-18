@@ -4,10 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
-using BaiTapLonMVC.Models;
 using Model;
+using Shop.Application.Models;
 
-namespace BaiTapLonMVC.Controllers
+namespace Shop.Application.Controllers
 {
     public class HomeController : Controller
     {

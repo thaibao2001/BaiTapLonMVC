@@ -384,7 +384,7 @@ app.controller("HomeController", function ($scope, $http, $rootScope, $window) {
         $scope.Account.Password = $scope._Password;
         $http({
             method: "post",
-            url: "/Home/LoginAdmin/",
+            url: "/Login/LoginAdmin/",
             dataType: "json",
             data: JSON.stringify($scope.Account)
         }).then(function (res) {
