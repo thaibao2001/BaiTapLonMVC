@@ -5,54 +5,11 @@ using Model;
 
 namespace Shop.Application.Areas.Admin.Controllers
 {
+    [Authorize]
     public class ProductController : Controller
     {
-        // GET
-        public ActionResult Index()
-        {
-            if (Session["Account"] != null)
-            {
-                return View();
-            }
-
-            return Redirect("/Home/Index");
-
-        }
-
-        public ActionResult Update()
-        {
-            if (Session["Account"] != null)
-            {
-                return View();
-            }
-
-            return Redirect("/Home/Index");
-
-        }
-
-        public ActionResult Create()
-        {
-            if (Session["Account"] != null)
-            {
-                return View();
-            }
-
-            return Redirect("/Home/Index");
-
-        }
-
-        public ActionResult Details()
-        {
-            if (Session["Account"] != null)
-            {
-                return View();
-            }
-
-            return Redirect("/Home/Index");
-
-        }
-
         private DBContext db = new DBContext();
+        public ActionResult Index() { return View(); }
 
         public JsonResult GetAllProduct(string searchString)
         {

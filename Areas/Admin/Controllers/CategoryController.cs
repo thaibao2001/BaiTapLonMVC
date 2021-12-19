@@ -5,6 +5,7 @@ using Model;
 
 namespace Shop.Application.Areas.Admin.Controllers
 {
+    [Authorize]
     public class CategoryController : Controller
     {
         DBContext db = new DBContext();
@@ -13,12 +14,7 @@ namespace Shop.Application.Areas.Admin.Controllers
 
         public ActionResult Index()
         {
-            if (Session["Account"] != null)
-            {
-                return View();
-            }
-
-            return Redirect("/Home/Index");
+            return View();
 
         }
 

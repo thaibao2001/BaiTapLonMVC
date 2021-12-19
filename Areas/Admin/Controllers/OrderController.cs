@@ -6,31 +6,14 @@ using Shop.Application.Models;
 
 namespace Shop.Application.Areas.Admin.Controllers
 {
+    [Authorize]
     public class OrderController : Controller
-    {
+    {   
+        private DBContext db = new DBContext();
         public ActionResult Index()
         {
-            if (Session["Account"] != null)
-            {
-                return View();
-            }
-
-            return Redirect("/Home/Index");
-
+            return View();
         }
-        
-        public ActionResult Details()
-        {
-            if (Session["Account"] != null)
-            {
-                return View();
-            }
-
-            return Redirect("/Home/Index");
-
-        }
-
-        private DBContext db = new DBContext();
 
         public JsonResult GetAllCheckOut(string searchString)
         {

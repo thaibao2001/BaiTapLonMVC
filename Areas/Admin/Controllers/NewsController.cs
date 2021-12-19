@@ -5,39 +5,22 @@ using Model;
 
 namespace Shop.Application.Areas.Admin.Controllers
 {
+    [Authorize]
     public class NewsController : Controller
     {
-        // GET
         public ActionResult Index()
         {
-            if (Session["Account"] != null)
-            {
-                return View();
-            }
-
-            return Redirect("/Home/Index");
-
+            return View();
         }
-
         public ActionResult Create()
         {
-            if (Session["Account"] != null)
-            {
-                return View();
-            }
-
-            return Redirect("/Home/Index");
+            return View();
 
         }
 
         public ActionResult Update()
         {
-            if (Session["Account"] != null)
-            {
-                return View();
-            }
-
-            return Redirect("/Home/Index");
+            return View();
 
         }
 

@@ -1,6 +1,6 @@
 ﻿var app = angular.module("Category", ['angularUtils.directives.dirPagination']);
 app.controller("CategoryController", function ($scope, $http) {
-    debugger;
+  
     $scope.GetAllCategory = function (searchString) {
         searchString = document.getElementById("txtSearch").value.toString();
         $http({

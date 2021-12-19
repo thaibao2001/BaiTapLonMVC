@@ -2975,6 +2975,14 @@
       <Project>{7a8603ac-7515-4ca4-800d-a42894342fd9}</Project>
       <Name>Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Shop.Business\Shop.Business.csproj">
+      <Project>{0ca7649f-3980-45fb-96f9-964fa0eb3714}</Project>
+      <Name>Shop.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shop.DataAccessLayer\Shop.DataAccessLayer.csproj">
+      <Project>{24e774c8-7bb1-4e15-9a52-56b404d9c0a3}</Project>
+      <Name>Shop.DataAccessLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

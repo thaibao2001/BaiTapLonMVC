@@ -1,6 +1,5 @@
 ﻿var app = angular.module("Product", ['angularUtils.directives.dirPagination']);
 app.controller("ProductController", function ($scope, $rootScope, $http) {
-    debugger;
     $scope.GetAllProduct = function (searchString) {
         searchString = document.getElementById("txtSearch").value.toString();
         $http({

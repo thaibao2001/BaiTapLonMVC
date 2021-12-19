@@ -3,29 +3,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Model;
 using System.Web.Security;
+using Shop.DataAccessLayer;
+using Shop.Business;
 
 namespace Shop.Application.Controllers
 {
-    [Authorize]
+
     public class LoginController : Controller
     {
-        private DBContext db = new DBContext();
-        public JsonResult LoginAdmin(Account account)
+        [HttpPost]
+        public JsonResult Login(string user, string password)
         {
-            db.Configuration.ProxyCreationEnabled = false;
-            bool check = false;
-            foreach (Account item in db.Accounts.ToList())
+            LoginBuss loginBuss = new LoginBuss();
+            Account account=loginBuss.CheckAccount(user, password);
+            if (account == null)
             {
-                if (item.Username.Trim().Equals(account.Username) && item.Password.Trim().Equals(account.Password))
-                {
-                    check = true;
-                    Session["Account"] = item;
-                }
+                return Json(account, JsonRequestBehavior.AllowGet);
             }
+            else
+            {
+                
+                FormsAuthentication.SetAuthCookie(user, true);
+                return Json(account, JsonRequestBehavior.AllowGet);
+            }
+        }
 
-            return Json(check, JsonRequestBehavior.AllowGet);
+        [Authorize]
+        [HttpPost]
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Home");
         }
     }
 }

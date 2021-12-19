@@ -1,6 +1,6 @@
 ﻿var app = angular.module("Order", ['angularUtils.directives.dirPagination']);
 app.controller("OrderController", function ($scope, $rootScope, $http) {
-    debugger;
+
     $scope.GetAllOrder = function (searchString) {
         searchString = document.getElementById("txtSearch").value.toString();
         $http({

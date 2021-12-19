@@ -5,21 +5,14 @@ using Model;
 
 namespace Shop.Application.Areas.Admin.Controllers
 {
+    [Authorize]
     public class BranchController : Controller
     {
         DBContext db = new DBContext();
         // GET: Admin/Brand
-
-
         public ActionResult Index()
         {
-            if (Session["Account"] != null)
-            {
-                return View();
-            }
-
-            return Redirect("/Home/Index");
-
+            return View();
         }
 
         public JsonResult GetAllBranch(string searchString)

@@ -1,7 +1,7 @@
 ﻿var app = angular.module("News", ['angularUtils.directives.dirPagination']);
 app.controller("NewsController", function ($scope, $rootScope, $http) {
 
-    debugger;
+
     $scope.GetAllNews = function (searchString) {
         searchString = document.getElementById("txtSearch").value.toString();
         $http({

@@ -4,22 +4,16 @@ using Model;
 
 namespace Shop.Application.Areas.Admin.Controllers
 {
+    [Authorize]
     public class ImageProductController : Controller
     {
-        // GET
-        public ActionResult Index()
-        {
-            if (Session["Account"] != null)
-            {
-                return View();
-            }
-
-            return Redirect("/Home/Index");
-
-        }
 
         private DBContext db = new DBContext();
 
+        public ActionResult Index()
+        {
+            return View();
+        }
         public JsonResult GetImageProduct(int? id)
         {
             db.Configuration.ProxyCreationEnabled = false;

@@ -1,6 +1,6 @@
 ﻿var app = angular.module("Home", ['angularUtils.directives.dirPagination']);
 app.controller("HomeController", function ($scope, $http, $rootScope, $window) {
-    debugger;
+    
 
     $scope.GetAllCategory = function () {
         $http({
@@ -379,20 +379,19 @@ app.controller("HomeController", function ($scope, $http, $rootScope, $window) {
         })
     }
     $scope.Login = function () {
-        $scope.Account = {};
-        $scope.Account.Username = $scope._Username;
-        $scope.Account.Password = $scope._Password;
+        $scope.Account;
+        
         $http({
             method: "post",
-            url: "/Login/LoginAdmin/",
-            dataType: "json",
-            data: JSON.stringify($scope.Account)
+            url: "/Login/Login/",
+            data: { "user": $scope._Username, "password": $scope._Password }
         }).then(function (res) {
-            var item = res.data;
-            if (item.toString() == 'true') {
+            $scope.Account = res.data;
+            if ($scope.Account!=null) {
                 $window.location.href = '/Admin/Product';
                 $scope._Username = "";
                 $scope._Password = "";
+                alert('Đăng nhập thành công');
             } else {
                 alert('Tài khoản hoặc mật khẩu không chính xác');
             }
